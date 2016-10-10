@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from app.views import index_view, album_info
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', index_view, name="index_view"),
+    url(r'^album/(?P<row_id>\d+)/$', album_info, name="album_info")
 ]
