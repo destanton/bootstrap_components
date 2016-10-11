@@ -5,24 +5,38 @@
     <title>Welcome!</title>
     <style media="screen">
 
+    html, body{
+      background-color: #d1e8f3;
+      padding-left: 15px;
+      padding-right: 15px;
+
+    }
+    .turq_text{
+      color: teal;
+    }
 
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
-    <div class="container">
-      <h1>Welcome to the Pentatonix Fan Page!</h1>
-        <h3> Now featuring "That's Christmas to Me" </h3>
-        <h4>To see song lyrics click below</h4>
+      <div class="page-header">
+        <h1 class="turq_text"> Welcome to the Pentatonix Christmas Album Fan Page!</h1><small>"That's Christmas to Me"</small></h1>
+      </div>
+      <!-- <h1 class="turq_text"> Welcome to the Pentatonix Fan Page!</h1> -->
+      <pre>
+        <a href="{% url 'about_info' %}">About The Band</a> <br>
+        <a href="https://www.youtube.com/playlist?list=PLZmiuwmMQUHPV1i9mezE218_aEs-hM4Vq">Listen to the Album!</a>
+      </pre>
+
+        <!-- <h3 class="turq_text">"That's Christmas to Me" </h3> -->
+        <h4 class="turq_text">Song lyrics by title:</h4>
         <br>
-
         {% for row in song %}
-      <p>
-        <a href="{% url 'album_info' row.id %}">{{row.title}}</a>
-      </p>
 
+        <p>
+            <a href="{% url 'album_info' row.id %}">{{row.title}}</a>
+        </p>
         {% endfor %}
-        <!-- {{song}} -->
-    </div>
+        </div>
   </body>
 </html>

@@ -17,3 +17,8 @@ def album_info(request, row_id):
 
     }
     return render(request, "album.html", context)
+
+
+def about_info(request):
+
+    return render(request, "about.html")

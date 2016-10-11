@@ -4,17 +4,30 @@
     <meta charset="utf-8">
     <title>Album Page</title>
     <style media="screen">
+    html, body{
+      background-color: #d1e8f3;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      }
+      .turq_text{
+        color: teal;
+      }
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
     <div class="container">
-      <h1>Christmas Album</h1>
-      <a href="/">Homepage</a>
+      <h1 class="turq_text">{{song.title}}</h1>
       <pre>
+        <a href="{% url 'index_view' %}">Homepage</a>
+        <a href="{% url 'about_info' %}">About the Band</a>
+      </pre>
+      <pre class="turq_text">
         {{song.lyrics}}
       </pre>
     </div>
-
   </body>
 </html>
